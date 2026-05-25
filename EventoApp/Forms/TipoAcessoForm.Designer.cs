@@ -1,0 +1,68 @@
+namespace EventoApp.Forms
+{
+    partial class TipoAcessoForm
+    {
+        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Label lblId, lblNome;
+        private System.Windows.Forms.TextBox txtId, txtNome;
+        private System.Windows.Forms.Button btnNovo, btnGuardar, btnEliminar, btnAtualizar;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && components != null) components.Dispose();
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.lblId = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.SuspendLayout();
+
+            this.dgv.Location = new System.Drawing.Point(12, 12);
+            this.dgv.Size = new System.Drawing.Size(760, 280);
+            this.dgv.ReadOnly = true; this.dgv.AllowUserToAddRows = false;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv.MultiSelect = false;
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
+
+            this.lblId.Location = new System.Drawing.Point(12, 310); this.lblId.Text = "ID Tipo:"; this.lblId.Size = new System.Drawing.Size(100, 23);
+            this.lblNome.Location = new System.Drawing.Point(12, 340); this.lblNome.Text = "Nome perfil:"; this.lblNome.Size = new System.Drawing.Size(100, 23);
+
+            this.txtId.Location = new System.Drawing.Point(120, 307); this.txtId.Size = new System.Drawing.Size(120, 23); this.txtId.ReadOnly = true;
+            this.txtNome.Location = new System.Drawing.Point(120, 337); this.txtNome.Size = new System.Drawing.Size(300, 23);
+
+            this.btnNovo.Location = new System.Drawing.Point(560, 307); this.btnNovo.Size = new System.Drawing.Size(100, 30); this.btnNovo.Text = "Novo";
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            this.btnGuardar.Location = new System.Drawing.Point(670, 307); this.btnGuardar.Size = new System.Drawing.Size(100, 30); this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnEliminar.Location = new System.Drawing.Point(560, 343); this.btnEliminar.Size = new System.Drawing.Size(100, 30); this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnAtualizar.Location = new System.Drawing.Point(670, 343); this.btnAtualizar.Size = new System.Drawing.Size(100, 30); this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 400);
+            this.Controls.Add(this.dgv);
+            this.Controls.Add(this.lblId); this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.txtId); this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.btnNovo); this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnEliminar); this.Controls.Add(this.btnAtualizar);
+            this.Text = "Gestão de Tipos de Acesso";
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+    }
+}

@@ -1,0 +1,7 @@
+C:\Users\Duarte\Desktop\Trabalho\3Ano\BD\Projeto\EventoApp\bin\Debug\EventoApp.exe.config
+C:\Users\Duarte\Desktop\Trabalho\3Ano\BD\Projeto\EventoApp\bin\Debug\EventoApp.exe
+C:\Users\Duarte\Desktop\Trabalho\3Ano\BD\Projeto\EventoApp\bin\Debug\EventoApp.pdb
+C:\Users\Duarte\Desktop\Trabalho\3Ano\BD\Projeto\EventoApp\obj\Debug\EventoApp.csproj.AssemblyReference.cache
+C:\Users\Duarte\Desktop\Trabalho\3Ano\BD\Projeto\EventoApp\obj\Debug\EventoApp.csproj.CoreCompileInputs.cache
+C:\Users\Duarte\Desktop\Trabalho\3Ano\BD\Projeto\EventoApp\obj\Debug\EventoApp.exe
+C:\Users\Duarte\Desktop\Trabalho\3Ano\BD\Projeto\EventoApp\obj\Debug\EventoApp.pdb
