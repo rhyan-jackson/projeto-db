@@ -5,3 +5,10 @@ C:\Users\Duarte\Desktop\Trabalho\3Ano\BD\Projeto\EventoApp\obj\Debug\EventoApp.c
 C:\Users\Duarte\Desktop\Trabalho\3Ano\BD\Projeto\EventoApp\obj\Debug\EventoApp.csproj.CoreCompileInputs.cache
 C:\Users\Duarte\Desktop\Trabalho\3Ano\BD\Projeto\EventoApp\obj\Debug\EventoApp.exe
 C:\Users\Duarte\Desktop\Trabalho\3Ano\BD\Projeto\EventoApp\obj\Debug\EventoApp.pdb
+C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\bin\Debug\EventoApp.exe.config
+C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\bin\Debug\EventoApp.exe
+C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\bin\Debug\EventoApp.pdb
+C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\Debug\EventoApp.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\Debug\EventoApp.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\Debug\EventoApp.exe
+C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\Debug\EventoApp.pdb
