@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
-using IngressosFM.Database;
+using EventoApp.Database;
 
-namespace IngressosFM.Forms
+namespace EventoApp.Forms
 {
     public partial class SetorForm : Form
     {

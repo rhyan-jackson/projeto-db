@@ -1,4 +1,4 @@
-namespace IngressosFM.Forms
+namespace EventoApp.Forms
 {
     partial class SetorForm
     {

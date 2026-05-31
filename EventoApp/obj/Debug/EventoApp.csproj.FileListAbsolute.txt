@@ -15,3 +15,12 @@ C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\
 C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\Debug\EventoApp.Forms.VendaForm.resources
 C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\Debug\EventoApp.csproj.GenerateResource.cache
 C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\Debug\IngressosFM.Forms.VendaForm.resources
+C:\Users\Duarte\Desktop\Projeto_BD\projeto-db\EventoApp\obj\Debug\EventoApp.csproj.AssemblyReference.cache
+C:\Users\Duarte\Desktop\Projeto_BD\projeto-db\EventoApp\obj\Debug\EventoApp.Forms.VendaForm.resources
+C:\Users\Duarte\Desktop\Projeto_BD\projeto-db\EventoApp\obj\Debug\EventoApp.csproj.GenerateResource.cache
+C:\Users\Duarte\Desktop\Projeto_BD\projeto-db\EventoApp\obj\Debug\EventoApp.csproj.CoreCompileInputs.cache
+C:\Users\Duarte\Desktop\Projeto_BD\projeto-db\EventoApp\obj\Debug\EventoApp.exe
+C:\Users\Duarte\Desktop\Projeto_BD\projeto-db\EventoApp\obj\Debug\EventoApp.pdb
+C:\Users\Duarte\Desktop\Projeto_BD\projeto-db\EventoApp\bin\Debug\EventoApp.exe.config
+C:\Users\Duarte\Desktop\Projeto_BD\projeto-db\EventoApp\bin\Debug\EventoApp.exe
+C:\Users\Duarte\Desktop\Projeto_BD\projeto-db\EventoApp\bin\Debug\EventoApp.pdb

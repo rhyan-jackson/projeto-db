@@ -1,9 +1,9 @@
 using System;
 using System.Globalization;
 using System.Windows.Forms;
-using IngressosFM.Database;
+using EventoApp.Database;
 
-namespace IngressosFM.Forms
+namespace EventoApp.Forms
 {
     public partial class StandForm : Form
     {

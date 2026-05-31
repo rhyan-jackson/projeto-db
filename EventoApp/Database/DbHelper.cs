@@ -3,7 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace IngressosFM.Database
+namespace EventoApp.Database
 {
     /// <summary>
     /// Classe utilitária com métodos genéricos para aceder à base de dados p4g5.

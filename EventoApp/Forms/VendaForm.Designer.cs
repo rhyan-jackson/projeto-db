@@ -1,4 +1,4 @@
-namespace IngressosFM.Forms
+namespace EventoApp.Forms
 {
     partial class VendaForm
     {
@@ -38,7 +38,7 @@ namespace IngressosFM.Forms
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbNovTipo = new System.Windows.Forms.ComboBox();
-            this.textNovPreco = new System.Windows.Forms.TextBox();
+            this.txtNovPreco = new System.Windows.Forms.TextBox();
             this.dtpNovValidade = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -113,7 +113,6 @@ namespace IngressosFM.Forms
             this.D.TabIndex = 1;
             this.D.Text = "        Novo Participante    ";
             this.D.UseVisualStyleBackColor = true;
-            this.D.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // grpNova
             // 
@@ -289,7 +288,7 @@ namespace IngressosFM.Forms
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.cmbNovTipo);
-            this.groupBox1.Controls.Add(this.textNovPreco);
+            this.groupBox1.Controls.Add(this.txtNovPreco);
             this.groupBox1.Controls.Add(this.dtpNovValidade);
             this.groupBox1.Location = new System.Drawing.Point(21, 21);
             this.groupBox1.Name = "groupBox1";
@@ -297,7 +296,6 @@ namespace IngressosFM.Forms
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Novo Participante e Nova Venda";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label7
             // 
@@ -331,12 +329,12 @@ namespace IngressosFM.Forms
             this.cmbNovTipo.Size = new System.Drawing.Size(228, 24);
             this.cmbNovTipo.TabIndex = 17;
             // 
-            // textNovPreco
+            // txtNovPreco
             // 
-            this.textNovPreco.Location = new System.Drawing.Point(627, 51);
-            this.textNovPreco.Name = "textNovPreco";
-            this.textNovPreco.Size = new System.Drawing.Size(114, 22);
-            this.textNovPreco.TabIndex = 18;
+            this.txtNovPreco.Location = new System.Drawing.Point(627, 51);
+            this.txtNovPreco.Name = "txtNovPreco";
+            this.txtNovPreco.Size = new System.Drawing.Size(114, 22);
+            this.txtNovPreco.TabIndex = 18;
             // 
             // dtpNovValidade
             // 
@@ -564,7 +562,7 @@ namespace IngressosFM.Forms
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmbNovTipo;
-        private System.Windows.Forms.TextBox textNovPreco;
+        private System.Windows.Forms.TextBox txtNovPreco;
         private System.Windows.Forms.DateTimePicker dtpNovValidade;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;

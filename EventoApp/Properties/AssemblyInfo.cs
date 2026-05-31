@@ -1,11 +1,11 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("IngressosFM")]
+[assembly: AssemblyTitle("EventoApp")]
 [assembly: AssemblyDescription("Aplicação de gestão de eventos - Projeto BD 3º Ano UA")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("UA")]
-[assembly: AssemblyProduct("IngressosFM")]
+[assembly: AssemblyProduct("EventoApp")]
 [assembly: AssemblyCopyright("Copyright © 2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

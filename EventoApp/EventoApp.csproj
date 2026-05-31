@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A1B2C3D4-1234-5678-9ABC-DEF012345678}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>IngressosFM</RootNamespace>
-    <AssemblyName>IngressosFM</AssemblyName>
+    <RootNamespace>EventoApp</RootNamespace>
+    <AssemblyName>EventoApp</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

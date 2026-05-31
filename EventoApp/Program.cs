@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
-using IngressosFM.Forms;
+using EventoApp.Forms;
 
-namespace IngressosFM
+namespace EventoApp
 {
     internal static class Program
     {
