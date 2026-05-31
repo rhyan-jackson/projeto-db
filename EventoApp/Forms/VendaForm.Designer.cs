@@ -16,7 +16,7 @@ namespace EventoApp.Forms
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.s = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.D = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.grpNova = new System.Windows.Forms.GroupBox();
             this.lblPart = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
@@ -32,26 +32,9 @@ namespace EventoApp.Forms
             this.dtpValidade = new System.Windows.Forms.DateTimePicker();
             this.btnRegistar = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.D = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmbNovTipo = new System.Windows.Forms.ComboBox();
-            this.txtNovPreco = new System.Windows.Forms.TextBox();
-            this.dtpNovValidade = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cmbNovMetodo = new System.Windows.Forms.ComboBox();
-            this.txtNovReferencia = new System.Windows.Forms.TextBox();
-            this.lblNif = new System.Windows.Forms.Label();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblTel = new System.Windows.Forms.Label();
-            this.lblEvento = new System.Windows.Forms.Label();
-            this.txtNovNif = new System.Windows.Forms.TextBox();
-            this.txtNovNome = new System.Windows.Forms.TextBox();
-            this.txtNovTel = new System.Windows.Forms.TextBox();
-            this.cmbNovEvento = new System.Windows.Forms.ComboBox();
+            this.btnCriarERegistar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.lblStand = new System.Windows.Forms.Label();
@@ -61,12 +44,29 @@ namespace EventoApp.Forms
             this.cmbNovStand = new System.Windows.Forms.ComboBox();
             this.rdbNovVisitante = new System.Windows.Forms.RadioButton();
             this.rdbNovExpositor = new System.Windows.Forms.RadioButton();
-            this.btnCriarERegistar = new System.Windows.Forms.Button();
+            this.lblNif = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblTel = new System.Windows.Forms.Label();
+            this.cmbNovMetodo = new System.Windows.Forms.ComboBox();
+            this.lblEvento = new System.Windows.Forms.Label();
+            this.txtNovReferencia = new System.Windows.Forms.TextBox();
+            this.txtNovNif = new System.Windows.Forms.TextBox();
+            this.txtNovNome = new System.Windows.Forms.TextBox();
+            this.txtNovTel = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbNovEvento = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbNovTipo = new System.Windows.Forms.ComboBox();
+            this.txtNovPreco = new System.Windows.Forms.TextBox();
+            this.dtpNovValidade = new System.Windows.Forms.DateTimePicker();
             this.s.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.D.SuspendLayout();
             this.grpNova.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.D.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,16 +103,13 @@ namespace EventoApp.Forms
             this.tabPage1.Text = "Participante Existente";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // D
+            // label1
             // 
-            this.D.Controls.Add(this.groupBox1);
-            this.D.Location = new System.Drawing.Point(4, 25);
-            this.D.Name = "D";
-            this.D.Padding = new System.Windows.Forms.Padding(3);
-            this.D.Size = new System.Drawing.Size(1111, 484);
-            this.D.TabIndex = 1;
-            this.D.Text = "        Novo Participante    ";
-            this.D.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.TabIndex = 4;
             // 
             // grpNova
             // 
@@ -238,6 +235,7 @@ namespace EventoApp.Forms
             this.btnRegistar.Size = new System.Drawing.Size(194, 43);
             this.btnRegistar.TabIndex = 12;
             this.btnRegistar.Text = "Registar Venda";
+            this.btnRegistar.Click += new System.EventHandler(this.btnRegistar_Click);
             // 
             // dgv
             // 
@@ -252,13 +250,16 @@ namespace EventoApp.Forms
             this.dgv.Size = new System.Drawing.Size(1097, 259);
             this.dgv.TabIndex = 3;
             // 
-            // label1
+            // D
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
-            this.label1.TabIndex = 4;
+            this.D.Controls.Add(this.groupBox1);
+            this.D.Location = new System.Drawing.Point(4, 25);
+            this.D.Name = "D";
+            this.D.Padding = new System.Windows.Forms.Padding(3);
+            this.D.Size = new System.Drawing.Size(1111, 484);
+            this.D.TabIndex = 1;
+            this.D.Text = "        Novo Participante    ";
+            this.D.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -297,144 +298,15 @@ namespace EventoApp.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Novo Participante e Nova Venda";
             // 
-            // label7
+            // btnCriarERegistar
             // 
-            this.label7.Location = new System.Drawing.Point(507, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 25);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Tipo Acesso:";
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(507, 54);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 25);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Preço (€):";
-            // 
-            // label9
-            // 
-            this.label9.Location = new System.Drawing.Point(507, 86);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(114, 25);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Validade:";
-            // 
-            // cmbNovTipo
-            // 
-            this.cmbNovTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNovTipo.Location = new System.Drawing.Point(627, 19);
-            this.cmbNovTipo.Name = "cmbNovTipo";
-            this.cmbNovTipo.Size = new System.Drawing.Size(228, 24);
-            this.cmbNovTipo.TabIndex = 17;
-            // 
-            // txtNovPreco
-            // 
-            this.txtNovPreco.Location = new System.Drawing.Point(627, 51);
-            this.txtNovPreco.Name = "txtNovPreco";
-            this.txtNovPreco.Size = new System.Drawing.Size(114, 22);
-            this.txtNovPreco.TabIndex = 18;
-            // 
-            // dtpNovValidade
-            // 
-            this.dtpNovValidade.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNovValidade.Location = new System.Drawing.Point(627, 83);
-            this.dtpNovValidade.Name = "dtpNovValidade";
-            this.dtpNovValidade.Size = new System.Drawing.Size(228, 22);
-            this.dtpNovValidade.TabIndex = 19;
-            // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(508, 126);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(114, 25);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Método pgto:";
-            // 
-            // label11
-            // 
-            this.label11.Location = new System.Drawing.Point(508, 158);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(114, 25);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Referência:";
-            // 
-            // cmbNovMetodo
-            // 
-            this.cmbNovMetodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNovMetodo.Location = new System.Drawing.Point(628, 123);
-            this.cmbNovMetodo.Name = "cmbNovMetodo";
-            this.cmbNovMetodo.Size = new System.Drawing.Size(228, 24);
-            this.cmbNovMetodo.TabIndex = 22;
-            // 
-            // txtNovReferencia
-            // 
-            this.txtNovReferencia.Location = new System.Drawing.Point(628, 155);
-            this.txtNovReferencia.Name = "txtNovReferencia";
-            this.txtNovReferencia.Size = new System.Drawing.Size(342, 22);
-            this.txtNovReferencia.TabIndex = 23;
-            // 
-            // lblNif
-            // 
-            this.lblNif.Location = new System.Drawing.Point(18, 26);
-            this.lblNif.Name = "lblNif";
-            this.lblNif.Size = new System.Drawing.Size(103, 25);
-            this.lblNif.TabIndex = 17;
-            this.lblNif.Text = "NIF:";
-            // 
-            // lblNome
-            // 
-            this.lblNome.Location = new System.Drawing.Point(18, 58);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(103, 25);
-            this.lblNome.TabIndex = 18;
-            this.lblNome.Text = "Nome:";
-            // 
-            // lblTel
-            // 
-            this.lblTel.Location = new System.Drawing.Point(18, 90);
-            this.lblTel.Name = "lblTel";
-            this.lblTel.Size = new System.Drawing.Size(103, 25);
-            this.lblTel.TabIndex = 19;
-            this.lblTel.Text = "Telemóvel:";
-            // 
-            // lblEvento
-            // 
-            this.lblEvento.Location = new System.Drawing.Point(18, 122);
-            this.lblEvento.Name = "lblEvento";
-            this.lblEvento.Size = new System.Drawing.Size(103, 25);
-            this.lblEvento.TabIndex = 20;
-            this.lblEvento.Text = "Evento:";
-            // 
-            // txtNovNif
-            // 
-            this.txtNovNif.Location = new System.Drawing.Point(130, 22);
-            this.txtNovNif.Name = "txtNovNif";
-            this.txtNovNif.Size = new System.Drawing.Size(171, 22);
-            this.txtNovNif.TabIndex = 21;
-            // 
-            // txtNovNome
-            // 
-            this.txtNovNome.Location = new System.Drawing.Point(130, 54);
-            this.txtNovNome.Name = "txtNovNome";
-            this.txtNovNome.Size = new System.Drawing.Size(365, 22);
-            this.txtNovNome.TabIndex = 22;
-            // 
-            // txtNovTel
-            // 
-            this.txtNovTel.Location = new System.Drawing.Point(130, 86);
-            this.txtNovTel.Name = "txtNovTel";
-            this.txtNovTel.Size = new System.Drawing.Size(171, 22);
-            this.txtNovTel.TabIndex = 23;
-            // 
-            // cmbNovEvento
-            // 
-            this.cmbNovEvento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNovEvento.Location = new System.Drawing.Point(130, 118);
-            this.cmbNovEvento.Name = "cmbNovEvento";
-            this.cmbNovEvento.Size = new System.Drawing.Size(285, 24);
-            this.cmbNovEvento.TabIndex = 24;
+            this.btnCriarERegistar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCriarERegistar.Location = new System.Drawing.Point(627, 222);
+            this.btnCriarERegistar.Name = "btnCriarERegistar";
+            this.btnCriarERegistar.Size = new System.Drawing.Size(342, 43);
+            this.btnCriarERegistar.TabIndex = 34;
+            this.btnCriarERegistar.Text = "Criar Participante e Registar Venda";
+            this.btnCriarERegistar.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -506,15 +378,144 @@ namespace EventoApp.Forms
             this.rdbNovExpositor.TabIndex = 33;
             this.rdbNovExpositor.Text = "Expositor";
             // 
-            // btnCriarERegistar
+            // lblNif
             // 
-            this.btnCriarERegistar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCriarERegistar.Location = new System.Drawing.Point(627, 222);
-            this.btnCriarERegistar.Name = "btnCriarERegistar";
-            this.btnCriarERegistar.Size = new System.Drawing.Size(342, 43);
-            this.btnCriarERegistar.TabIndex = 34;
-            this.btnCriarERegistar.Text = "Criar Participante e Registar Venda";
-            this.btnCriarERegistar.Click += new System.EventHandler(this.button1_Click);
+            this.lblNif.Location = new System.Drawing.Point(18, 26);
+            this.lblNif.Name = "lblNif";
+            this.lblNif.Size = new System.Drawing.Size(103, 25);
+            this.lblNif.TabIndex = 17;
+            this.lblNif.Text = "NIF:";
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(508, 126);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(114, 25);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Método pgto:";
+            // 
+            // lblNome
+            // 
+            this.lblNome.Location = new System.Drawing.Point(18, 58);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(103, 25);
+            this.lblNome.TabIndex = 18;
+            this.lblNome.Text = "Nome:";
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(508, 158);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(114, 25);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Referência:";
+            // 
+            // lblTel
+            // 
+            this.lblTel.Location = new System.Drawing.Point(18, 90);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(103, 25);
+            this.lblTel.TabIndex = 19;
+            this.lblTel.Text = "Telemóvel:";
+            // 
+            // cmbNovMetodo
+            // 
+            this.cmbNovMetodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNovMetodo.Location = new System.Drawing.Point(628, 123);
+            this.cmbNovMetodo.Name = "cmbNovMetodo";
+            this.cmbNovMetodo.Size = new System.Drawing.Size(228, 24);
+            this.cmbNovMetodo.TabIndex = 22;
+            // 
+            // lblEvento
+            // 
+            this.lblEvento.Location = new System.Drawing.Point(18, 122);
+            this.lblEvento.Name = "lblEvento";
+            this.lblEvento.Size = new System.Drawing.Size(103, 25);
+            this.lblEvento.TabIndex = 20;
+            this.lblEvento.Text = "Evento:";
+            // 
+            // txtNovReferencia
+            // 
+            this.txtNovReferencia.Location = new System.Drawing.Point(628, 155);
+            this.txtNovReferencia.Name = "txtNovReferencia";
+            this.txtNovReferencia.Size = new System.Drawing.Size(342, 22);
+            this.txtNovReferencia.TabIndex = 23;
+            // 
+            // txtNovNif
+            // 
+            this.txtNovNif.Location = new System.Drawing.Point(130, 22);
+            this.txtNovNif.Name = "txtNovNif";
+            this.txtNovNif.Size = new System.Drawing.Size(171, 22);
+            this.txtNovNif.TabIndex = 21;
+            // 
+            // txtNovNome
+            // 
+            this.txtNovNome.Location = new System.Drawing.Point(130, 54);
+            this.txtNovNome.Name = "txtNovNome";
+            this.txtNovNome.Size = new System.Drawing.Size(365, 22);
+            this.txtNovNome.TabIndex = 22;
+            // 
+            // txtNovTel
+            // 
+            this.txtNovTel.Location = new System.Drawing.Point(130, 86);
+            this.txtNovTel.Name = "txtNovTel";
+            this.txtNovTel.Size = new System.Drawing.Size(171, 22);
+            this.txtNovTel.TabIndex = 23;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(507, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 25);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Tipo Acesso:";
+            // 
+            // cmbNovEvento
+            // 
+            this.cmbNovEvento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNovEvento.Location = new System.Drawing.Point(130, 118);
+            this.cmbNovEvento.Name = "cmbNovEvento";
+            this.cmbNovEvento.Size = new System.Drawing.Size(285, 24);
+            this.cmbNovEvento.TabIndex = 24;
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(507, 54);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(114, 25);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Preço (€):";
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(507, 86);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(114, 25);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Validade:";
+            // 
+            // cmbNovTipo
+            // 
+            this.cmbNovTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNovTipo.Location = new System.Drawing.Point(627, 19);
+            this.cmbNovTipo.Name = "cmbNovTipo";
+            this.cmbNovTipo.Size = new System.Drawing.Size(228, 24);
+            this.cmbNovTipo.TabIndex = 17;
+            // 
+            // txtNovPreco
+            // 
+            this.txtNovPreco.Location = new System.Drawing.Point(627, 51);
+            this.txtNovPreco.Name = "txtNovPreco";
+            this.txtNovPreco.Size = new System.Drawing.Size(114, 22);
+            this.txtNovPreco.TabIndex = 18;
+            // 
+            // dtpNovValidade
+            // 
+            this.dtpNovValidade.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNovValidade.Location = new System.Drawing.Point(627, 83);
+            this.dtpNovValidade.Name = "dtpNovValidade";
+            this.dtpNovValidade.Size = new System.Drawing.Size(228, 22);
+            this.dtpNovValidade.TabIndex = 19;
             // 
             // VendaForm
             // 
@@ -528,10 +529,10 @@ namespace EventoApp.Forms
             this.s.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.D.ResumeLayout(false);
             this.grpNova.ResumeLayout(false);
             this.grpNova.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.D.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

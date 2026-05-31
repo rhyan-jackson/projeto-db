@@ -32,10 +32,14 @@ namespace EventoApp.Forms
         private void menuTokens_Click(object sender, EventArgs e) => Abrir(new TokenForm());
         private void menuVendas_Click(object sender, EventArgs e) => Abrir(new VendaForm(_utilizador));
         private void menuValidacao_Click(object sender, EventArgs e) => Abrir(new ValidacaoForm());
-
         private void menuSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void menuDashboard_Click_1(object sender, EventArgs e)
+        {
+            Abrir(new DashboardForm());
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using EventoApp.Database;
+using QRCoder;
 
 namespace EventoApp.Forms
 {
@@ -21,7 +22,7 @@ namespace EventoApp.Forms
             cmbTipo.DisplayMember = "nome_perfil";
             cmbTipo.ValueMember = "id_tipo";
             cmbTipo.DataSource = t;
-        }
+        }   
 
         private void CarregarDados()
         {
@@ -87,6 +88,27 @@ namespace EventoApp.Forms
             txtQr.Text = r.Cells["codigo_qr"].Value.ToString();
             cmbStatus.SelectedItem = r.Cells["status"].Value.ToString();
             cmbTipo.SelectedValue = r.Cells["id_tipo"].Value;
+
+            // Gerar e renderizar imagem
+            if (!string.IsNullOrEmpty(txtQr.Text))
+                GenerateAndShowQRCode(txtQr.Text);
+            else
+                picQRCode.Image = null;
+        }
+
+        private void GenerateAndShowQRCode(string texto)
+        {
+            using (var qrGenerator = new QRCodeGenerator())
+            using (var qrCodeData = qrGenerator.CreateQrCode(texto, QRCodeGenerator.ECCLevel.Q))
+            using (var qrCode = new QRCode(qrCodeData))
+            {
+                picQRCode.Image = qrCode.GetGraphic(20);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
