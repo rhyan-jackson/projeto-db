@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
-using EventoApp.Database;
+using IngressosFM.Database;
 
-namespace EventoApp.Forms
+namespace IngressosFM.Forms
 {
     public partial class SetorForm : Form
     {
@@ -30,11 +30,8 @@ namespace EventoApp.Forms
         {
             try
             {
-                dgv.DataSource = DbHelper.ExecuteQuery(@"
-                    SELECT s.id_setor, s.id_evento, e.nome AS evento
-                    FROM dbo.Setor s
-                    INNER JOIN dbo.Evento e ON e.id_evento = s.id_evento
-                    ORDER BY s.id_setor");
+                dgv.DataSource = DbHelper.ExecuteQuery(
+                    "SELECT * FROM dbo.vw_Setores ORDER BY id_setor");
             }
             catch (Exception ex) { MessageBox.Show("Erro: " + ex.Message); }
         }
@@ -58,12 +55,8 @@ namespace EventoApp.Forms
 
             try
             {
-                var sql = @"
-                    IF EXISTS (SELECT 1 FROM dbo.Setor WHERE id_setor = @id)
-                        UPDATE dbo.Setor SET id_evento=@ev WHERE id_setor=@id
-                    ELSE
-                        INSERT INTO dbo.Setor(id_setor, id_evento) VALUES(@id, @ev)";
-                DbHelper.ExecuteNonQuery(sql,
+                DbHelper.ExecuteNonQuery(
+                    "EXEC dbo.sp_GuardarSetor @id, @ev",
                     DbHelper.P("@id", id),
                     DbHelper.P("@ev", cmbEvento.SelectedValue));
                 CarregarDados();
@@ -78,7 +71,8 @@ namespace EventoApp.Forms
             if (MessageBox.Show("Eliminar setor?", "Confirmar", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
             try
             {
-                DbHelper.ExecuteNonQuery("DELETE FROM dbo.Setor WHERE id_setor=@id",
+                DbHelper.ExecuteNonQuery(
+                    "EXEC dbo.sp_EliminarSetor @id",
                     DbHelper.P("@id", id));
                 CarregarDados(); Limpar();
             }

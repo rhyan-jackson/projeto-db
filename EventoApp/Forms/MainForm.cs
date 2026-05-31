@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace EventoApp.Forms
+namespace IngressosFM.Forms
 {
     public partial class MainForm : Form
     {

@@ -1,9 +1,9 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
-using EventoApp.Database;
+using IngressosFM.Database;
 
-namespace EventoApp.Forms
+namespace IngressosFM.Forms
 {
     public partial class LoginForm : Form
     {
@@ -29,14 +29,10 @@ namespace EventoApp.Forms
 
             try
             {
-                // NOTA: O script guarda password_hash. Aqui, para simplicidade
-                // académica, comparamos diretamente. Numa solução real terias
-                // de aplicar o mesmo algoritmo de hash antes de comparar.
-                var sql = @"SELECT COUNT(*) FROM dbo.Utilizador
-                            WHERE email = @email AND password_hash = @pass";
-                var count = Convert.ToInt32(DbHelper.ExecuteScalar(sql,
+                var count = Convert.ToInt32(DbHelper.ExecuteScalar(
+                    "EXEC dbo.sp_Login @email, @pass",
                     DbHelper.P("@email", email),
-                    DbHelper.P("@pass", pass)));
+                    DbHelper.P("@pass",  pass)));
 
                 if (count > 0)
                 {

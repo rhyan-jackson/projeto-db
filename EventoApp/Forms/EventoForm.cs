@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
-using EventoApp.Database;
+using IngressosFM.Database;
 
-namespace EventoApp.Forms
+namespace IngressosFM.Forms
 {
     public partial class EventoForm : Form
     {
@@ -57,20 +57,12 @@ namespace EventoApp.Forms
 
             try
             {
-                // MERGE: insere se não existe, senão atualiza
-                var sql = @"
-                    IF EXISTS (SELECT 1 FROM dbo.Evento WHERE id_evento = @id)
-                        UPDATE dbo.Evento SET nome=@nome, data_inicio=@di, data_fim=@df
-                        WHERE id_evento = @id
-                    ELSE
-                        INSERT INTO dbo.Evento(id_evento, nome, data_inicio, data_fim)
-                        VALUES(@id, @nome, @di, @df)";
-
-                DbHelper.ExecuteNonQuery(sql,
-                    DbHelper.P("@id", id),
+                DbHelper.ExecuteNonQuery(
+                    "EXEC dbo.sp_GuardarEvento @id, @nome, @di, @df",
+                    DbHelper.P("@id",   id),
                     DbHelper.P("@nome", txtNome.Text.Trim()),
-                    DbHelper.P("@di", dtpInicio.Value.Date),
-                    DbHelper.P("@df", dtpFim.Value.Date));
+                    DbHelper.P("@di",   dtpInicio.Value.Date),
+                    DbHelper.P("@df",   dtpFim.Value.Date));
 
                 CarregarDados();
                 LimparCampos();
@@ -93,7 +85,8 @@ namespace EventoApp.Forms
 
             try
             {
-                DbHelper.ExecuteNonQuery("DELETE FROM dbo.Evento WHERE id_evento=@id",
+                DbHelper.ExecuteNonQuery(
+                    "EXEC dbo.sp_EliminarEvento @id",
                     DbHelper.P("@id", id));
                 CarregarDados();
                 LimparCampos();

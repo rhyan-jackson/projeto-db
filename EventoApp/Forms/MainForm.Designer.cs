@@ -1,4 +1,4 @@
-namespace EventoApp.Forms
+namespace IngressosFM.Forms
 {
     partial class MainForm
     {

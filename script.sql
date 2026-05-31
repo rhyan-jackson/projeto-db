@@ -54,7 +54,6 @@ CREATE TABLE Participante (
 
 CREATE TABLE Expositor (
     id_participante       INT          PRIMARY KEY,
-    id_expositor          VARCHAR(50)  NULL,
     nome_empresa          VARCHAR(255) NULL,
     id_stand              INT          NULL,
     data_inicio_ocupacao  DATE         NULL,
@@ -68,14 +67,6 @@ CREATE TABLE Visitante (
     FOREIGN KEY (id_participante) REFERENCES Participante(id_participante)
 );
 
-CREATE TABLE Credencial (
-    id_token        INT          PRIMARY KEY,
-    cargo_no_cartao VARCHAR(255) NULL,
-    data_validade   DATE         NULL,
-    id_participante INT          NOT NULL,
-    FOREIGN KEY (id_token)        REFERENCES Token(id_token),
-    FOREIGN KEY (id_participante) REFERENCES Participante(id_participante)
-);
 
 CREATE TABLE Venda (
     id_venda       INT            PRIMARY KEY,
@@ -124,10 +115,3 @@ CREATE TABLE Validacao (
     FOREIGN KEY (id_token)           REFERENCES Token(id_token)
 );
 
-CREATE TABLE permite (
-    id_tipo   INT NOT NULL,
-    id_setor  INT NOT NULL,
-    PRIMARY KEY (id_tipo, id_setor),
-    FOREIGN KEY (id_tipo)  REFERENCES Tipo_de_Acesso(id_tipo),
-    FOREIGN KEY (id_setor) REFERENCES Setor(id_setor)
-);

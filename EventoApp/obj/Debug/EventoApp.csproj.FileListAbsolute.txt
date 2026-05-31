@@ -12,3 +12,6 @@ C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\
 C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\Debug\EventoApp.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\Debug\EventoApp.exe
 C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\Debug\EventoApp.pdb
+C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\Debug\EventoApp.Forms.VendaForm.resources
+C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\Debug\EventoApp.csproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\Trabalho\3_Ano\BD\Projeto_BD\App\projeto-db\EventoApp\obj\Debug\IngressosFM.Forms.VendaForm.resources

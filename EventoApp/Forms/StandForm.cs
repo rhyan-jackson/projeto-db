@@ -1,9 +1,9 @@
 using System;
 using System.Globalization;
 using System.Windows.Forms;
-using EventoApp.Database;
+using IngressosFM.Database;
 
-namespace EventoApp.Forms
+namespace IngressosFM.Forms
 {
     public partial class StandForm : Form
     {
@@ -53,15 +53,11 @@ namespace EventoApp.Forms
 
             try
             {
-                var sql = @"
-                    IF EXISTS (SELECT 1 FROM dbo.Stand WHERE id_stand=@id)
-                        UPDATE dbo.Stand SET area_m2=@area, id_setor=@s WHERE id_stand=@id
-                    ELSE
-                        INSERT INTO dbo.Stand(id_stand, area_m2, id_setor) VALUES(@id, @area, @s)";
-                DbHelper.ExecuteNonQuery(sql,
-                    DbHelper.P("@id", id),
-                    DbHelper.P("@area", area),
-                    DbHelper.P("@s", cmbSetor.SelectedValue));
+                DbHelper.ExecuteNonQuery(
+                    "EXEC dbo.sp_GuardarStand @id, @area, @setor",
+                    DbHelper.P("@id",    id),
+                    DbHelper.P("@area",  area),
+                    DbHelper.P("@setor", cmbSetor.SelectedValue));
                 CarregarDados(); Limpar();
             }
             catch (Exception ex) { MessageBox.Show("Erro: " + ex.Message); }
@@ -73,7 +69,8 @@ namespace EventoApp.Forms
             if (MessageBox.Show("Eliminar stand?", "Confirmar", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
             try
             {
-                DbHelper.ExecuteNonQuery("DELETE FROM dbo.Stand WHERE id_stand=@id",
+                DbHelper.ExecuteNonQuery(
+                    "EXEC dbo.sp_EliminarStand @id",
                     DbHelper.P("@id", id));
                 CarregarDados(); Limpar();
             }

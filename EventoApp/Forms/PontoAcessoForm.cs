@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
-using EventoApp.Database;
+using IngressosFM.Database;
 
-namespace EventoApp.Forms
+namespace IngressosFM.Forms
 {
     public partial class PontoAcessoForm : Form
     {
@@ -50,18 +50,12 @@ namespace EventoApp.Forms
 
             try
             {
-                var sql = @"
-                    IF EXISTS (SELECT 1 FROM dbo.Ponto_de_Acesso WHERE id_ponto_de_acesso=@id)
-                        UPDATE dbo.Ponto_de_Acesso SET designacao=@d, sentido=@s, id_setor=@set
-                        WHERE id_ponto_de_acesso=@id
-                    ELSE
-                        INSERT INTO dbo.Ponto_de_Acesso(id_ponto_de_acesso, designacao, sentido, id_setor)
-                        VALUES(@id, @d, @s, @set)";
-                DbHelper.ExecuteNonQuery(sql,
-                    DbHelper.P("@id", id),
-                    DbHelper.P("@d", txtDesignacao.Text.Trim()),
-                    DbHelper.P("@s", cmbSentido.SelectedItem),
-                    DbHelper.P("@set", cmbSetor.SelectedValue));
+                DbHelper.ExecuteNonQuery(
+                    "EXEC dbo.sp_GuardarPontoAcesso @id, @d, @s, @setor",
+                    DbHelper.P("@id",    id),
+                    DbHelper.P("@d",     txtDesignacao.Text.Trim()),
+                    DbHelper.P("@s",     cmbSentido.SelectedItem),
+                    DbHelper.P("@setor", cmbSetor.SelectedValue));
                 CarregarDados(); Limpar();
             }
             catch (Exception ex) { MessageBox.Show("Erro: " + ex.Message); }
@@ -73,7 +67,8 @@ namespace EventoApp.Forms
             if (MessageBox.Show("Eliminar?", "Confirmar", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
             try
             {
-                DbHelper.ExecuteNonQuery("DELETE FROM dbo.Ponto_de_Acesso WHERE id_ponto_de_acesso=@id",
+                DbHelper.ExecuteNonQuery(
+                    "EXEC dbo.sp_EliminarPontoAcesso @id",
                     DbHelper.P("@id", id));
                 CarregarDados(); Limpar();
             }

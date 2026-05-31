@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
-using EventoApp.Database;
+using IngressosFM.Database;
 
-namespace EventoApp.Forms
+namespace IngressosFM.Forms
 {
     public partial class TipoAcessoForm : Form
     {
@@ -32,14 +32,10 @@ namespace EventoApp.Forms
             if (string.IsNullOrWhiteSpace(txtNome.Text)) { MessageBox.Show("Nome obrigatório."); return; }
             try
             {
-                var sql = @"
-                    IF EXISTS (SELECT 1 FROM dbo.Tipo_de_Acesso WHERE id_tipo=@id)
-                        UPDATE dbo.Tipo_de_Acesso SET nome_perfil=@n WHERE id_tipo=@id
-                    ELSE
-                        INSERT INTO dbo.Tipo_de_Acesso(id_tipo, nome_perfil) VALUES(@id, @n)";
-                DbHelper.ExecuteNonQuery(sql,
-                    DbHelper.P("@id", id),
-                    DbHelper.P("@n", txtNome.Text.Trim()));
+                DbHelper.ExecuteNonQuery(
+                    "EXEC dbo.sp_GuardarTipoAcesso @id, @nome",
+                    DbHelper.P("@id",   id),
+                    DbHelper.P("@nome", txtNome.Text.Trim()));
                 CarregarDados(); Limpar();
             }
             catch (Exception ex) { MessageBox.Show("Erro: " + ex.Message); }
@@ -51,7 +47,8 @@ namespace EventoApp.Forms
             if (MessageBox.Show("Eliminar?", "Confirmar", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
             try
             {
-                DbHelper.ExecuteNonQuery("DELETE FROM dbo.Tipo_de_Acesso WHERE id_tipo=@id",
+                DbHelper.ExecuteNonQuery(
+                    "EXEC dbo.sp_EliminarTipoAcesso @id",
                     DbHelper.P("@id", id));
                 CarregarDados(); Limpar();
             }

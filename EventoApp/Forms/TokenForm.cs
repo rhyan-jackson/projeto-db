@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
-using EventoApp.Database;
+using IngressosFM.Database;
 
-namespace EventoApp.Forms
+namespace IngressosFM.Forms
 {
     public partial class TokenForm : Form
     {
@@ -25,11 +25,8 @@ namespace EventoApp.Forms
 
         private void CarregarDados()
         {
-            dgv.DataSource = DbHelper.ExecuteQuery(@"
-                SELECT t.id_token, t.codigo_qr, t.status, t.id_tipo, ta.nome_perfil AS tipo
-                FROM dbo.Token t
-                INNER JOIN dbo.Tipo_de_Acesso ta ON ta.id_tipo = t.id_tipo
-                ORDER BY t.id_token");
+            dgv.DataSource = DbHelper.ExecuteQuery(
+                "SELECT * FROM dbo.vw_Tokens ORDER BY id_token");
         }
 
         private void Limpar()
@@ -55,13 +52,8 @@ namespace EventoApp.Forms
 
             try
             {
-                var sql = @"
-                    IF EXISTS (SELECT 1 FROM dbo.Token WHERE id_token=@id)
-                        UPDATE dbo.Token SET codigo_qr=@qr, status=@st, id_tipo=@tp WHERE id_token=@id
-                    ELSE
-                        INSERT INTO dbo.Token(id_token, codigo_qr, status, id_tipo)
-                        VALUES(@id, @qr, @st, @tp)";
-                DbHelper.ExecuteNonQuery(sql,
+                DbHelper.ExecuteNonQuery(
+                    "EXEC dbo.sp_GuardarToken @id, @qr, @st, @tp",
                     DbHelper.P("@id", id),
                     DbHelper.P("@qr", txtQr.Text.Trim()),
                     DbHelper.P("@st", cmbStatus.SelectedItem),
@@ -77,7 +69,8 @@ namespace EventoApp.Forms
             if (MessageBox.Show("Eliminar token?", "Confirmar", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
             try
             {
-                DbHelper.ExecuteNonQuery("DELETE FROM dbo.Token WHERE id_token=@id",
+                DbHelper.ExecuteNonQuery(
+                    "EXEC dbo.sp_EliminarToken @id",
                     DbHelper.P("@id", id));
                 CarregarDados(); Limpar();
             }
